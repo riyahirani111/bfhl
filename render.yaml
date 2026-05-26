@@ -1,6 +1,6 @@
 services:
   - type: web
     name: bfhl
-    env: java
+    env: docker
     buildCommand: chmod +x mvnw && ./mvnw clean install
     startCommand: java -jar target/bfhl-0.0.1-SNAPSHOT.jar
