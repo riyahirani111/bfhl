@@ -7,13 +7,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/bfhl")
+@RequestMapping
 @RequiredArgsConstructor
 public class BfhlController {
 
     private final BfhlService bfhlService;
 
-    @PostMapping
+    @GetMapping("/health")
+    public String health() {
+        return "OK";
+    }
+
+    @PostMapping("/bfhl")
     public ResponseDto process(
             @RequestBody RequestDto requestDto
     ) {
